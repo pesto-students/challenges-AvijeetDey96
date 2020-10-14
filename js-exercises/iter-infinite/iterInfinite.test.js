@@ -13,12 +13,20 @@ describe('test count problem', () => {
 })
 describe('test cycle problem', () => {
   const iter = cycle([1, 2, 3, 4]);
+  const iterString = cycle('ABCD');
   test('check cycle is working or not', () => {
     expect(iter.next()).toStrictEqual({ value: 1, done: false })
     expect(iter.next()).toStrictEqual({ value: 2, done: false })
     expect(iter.next()).toStrictEqual({ value: 3, done: false })
     expect(iter.next()).toStrictEqual({ value: 4, done: false })
     expect(iter.next()).toStrictEqual({ value: 1, done: false })
+  })
+  test('check cycle is working for string or not', () => {
+    expect(iterString.next()).toStrictEqual({ value: 'A', done: false })
+    expect(iterString.next()).toStrictEqual({ value: 'B', done: false })
+    expect(iterString.next()).toStrictEqual({ value: 'C', done: false })
+    expect(iterString.next()).toStrictEqual({ value: 'D', done: false })
+    expect(iterString.next()).toStrictEqual({ value: 'A', done: false })
   })
 
 })

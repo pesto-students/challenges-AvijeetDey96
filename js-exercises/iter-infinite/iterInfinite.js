@@ -1,6 +1,6 @@
-function* cycle(array) {
+function* cycle(param) {
   while (true) {
-    for (const data of array) {
+    for (const data of param) {
       yield data;
     }
   }
